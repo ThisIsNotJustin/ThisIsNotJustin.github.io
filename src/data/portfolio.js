@@ -3,7 +3,7 @@ export default [
         title: "Music Player (In Progress)",
         imgUrl: "",
         stack: ["JavaScript", "Shazam API"],
-        link: "",
+        link: "https://github.com/ThisIsNotJustin/Music-Player",
     },
     {
         title: "Portfolio Website",
@@ -15,13 +15,13 @@ export default [
         title: "Facebook Web Scraper (In Progress)",
         imgUrl: "/assets/BestBuy.png",
         stack: ["Python", "Selenium", "Twilio API"],
-        link: "",
+        link: "https://github.com/ThisIsNotJustin/Facebook-Webscraper",
     },
     {
-        title: "Retro Pokemon (In Progress)",
+        title: "Retro Pokemon Game (In Progress)",
         imgUrl: "/assets/SpaceGame.png",
         stack: ["HTML", "CSS", "JavaScript"],
-        link: "",
+        link: "https://github.com/ThisIsNotJustin/Retro-PokemonStyle-Game",
     },
     {
         title: "Study Timer",
