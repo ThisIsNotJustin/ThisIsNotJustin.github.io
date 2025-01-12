@@ -3,19 +3,22 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "../../lib/utils";
+import { Sidebar, SidebarBody, SidebarLink } from "./sidebar";
+import Checkbox from "./checkbox"
 
 export const FloatingNav = ({
   navItems,
   className,
 }: {
   navItems: {
-    name: string;
-    link: string;
+    label: string;
+    href: string;
   }[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -26,6 +29,10 @@ export const FloatingNav = ({
       }
     }
   });
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -85,14 +92,21 @@ export const FloatingNav = ({
             exit={{ opacity: 0, y: -20 }}
             className="fixed top-0 z-50 flex w-full items-center justify-end px-5 pt-5"
           >
-            <button className="flex items-center justify-center text-heading-3 p-5 overflow-hidden w-[60px] h-[60px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group hover:duration-300 duration-300">
-              <span className="relative flex items-center justify-center">
-                <span className="absolute bottom-0 h-[0.125em] w-0 bg-secondary-700 opacity-0 transition-all duration-300 ease-out group-hover:w-full"></span>
-                  <span>&#9776;</span>
-              </span>
-            </button>
+            <div className="flex items-center justify-center text-heading-3 p-5 overflow-hidden w-[60px] h-[60px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group hover:duration-300 duration-300">
+              <Checkbox menuOpen={menuOpen} toggleMenu={toggleMenu}/>
+            </div>
+            
           </motion.div>
         )}
+        {menuOpen && (
+        <Sidebar open={menuOpen} setOpen={setMenuOpen}>
+          <SidebarBody className="pt-96 pl-20">
+            {navItems.map((item, index) => (
+              <SidebarLink key={`${item.label}-${index}`} link={{ label: item.label, href: item.href }} />
+            ))}
+          </SidebarBody>
+        </Sidebar>
+      )}
       </motion.div>
     </AnimatePresence>
   );

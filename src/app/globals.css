@@ -21,12 +21,11 @@ body {
 }
 
 @layer base {
-
-  */*{
+  
+  * /*{
     border: 1px solid red;
   }
-  */
-
+    */
   
   ::-moz-selection {
     background: #D1D1C7

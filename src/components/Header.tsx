@@ -1,20 +1,22 @@
-import Image from "next/image"
-import justinLogo from "../assets/jtag.png";
 import React from "react";
 import { FloatingNav } from "../components/ui/floating-navbar";
 
 const navItems = [
   {
-    name: "<Justin>",
-    link: "/",
+    label: "Home",
+    href: "/#info",
   },
   {
-    name: "About",
-    link: "/about",
+    label: "About",
+    href: "/#about",
   },
   {
-    name: "Projects",
-    link: "/projects",
+    label: "Projects",
+    href: "/#projects",
+  },
+  {
+    label: "Contact",
+    href: "/#contact",
   },
 ];
 
