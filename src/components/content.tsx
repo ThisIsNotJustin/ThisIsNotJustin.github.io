@@ -4,6 +4,22 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
+interface TextParallaxContentProps {
+  imgUrl: string;
+  subheading: string;
+  heading: string;
+  children: React.ReactNode;
+}
+
+interface StickyImageProps {
+  imgUrl: string;
+}
+
+interface OverlayCopyProps {
+  subheading: string;
+  heading: string;
+}
+
 export default function TextParallaxContentExample() {
   return (
     <div className="">
@@ -34,7 +50,7 @@ export default function TextParallaxContentExample() {
 
 const IMG_PADDING = 12;
 
-const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
+const TextParallaxContent: React.FC<TextParallaxContentProps> = ({ imgUrl, subheading, heading, children }) => {
   return (
     <div
       style={{
@@ -51,7 +67,7 @@ const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
   );
 };
 
-const StickyImage = ({ imgUrl }) => {
+const StickyImage: React.FC<StickyImageProps> = ({ imgUrl }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -84,7 +100,7 @@ const StickyImage = ({ imgUrl }) => {
   );
 };
 
-const OverlayCopy = ({ subheading, heading }) => {
+const OverlayCopy: React.FC<OverlayCopyProps> = ({ subheading, heading }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -111,7 +127,7 @@ const OverlayCopy = ({ subheading, heading }) => {
   );
 };
 
-const ExampleContent = () => (
+const ExampleContent: React.FC = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
       Additional content explaining the above card here
