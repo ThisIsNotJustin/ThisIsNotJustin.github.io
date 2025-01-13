@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="relative py-24">
+    <section id="about" className="flex items-center justify-center py-24">
       <div className="container mx-auto mb-72">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700 mb-10">

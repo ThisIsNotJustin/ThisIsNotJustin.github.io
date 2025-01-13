@@ -20,16 +20,16 @@ export default function Footer() {
             <hr className="border-t border-secondary-700 my-1" />
             <ul className="mt-4 space-y-2 text-works-title">
               <li>
-                <a href="#home" className="duration-300 transition-all hover:text-secondary-600">Home</a>
+                <a href="/#intro" className="duration-300 transition-all hover:text-secondary-600">Home</a>
               </li>
               <li>
-                <a href="#about" className="duration-300 transition-all hover:text-secondary-600">About</a>
+                <a href="/#about" className="duration-300 transition-all hover:text-secondary-600">About</a>
               </li>
               <li>
-                <a href="#projects" className="duration-300 transition-all hover:text-secondary-600">Projects</a>
+                <a href="/#projects" className="duration-300 transition-all hover:text-secondary-600">Projects</a>
               </li>
               <li>
-                <a href="#contact" className="duration-300 transition-all hover:text-secondary-600">Contact</a>
+                <a href="/#contact" className="duration-300 transition-all hover:text-secondary-600">Contact</a>
               </li>
             </ul>
             <div className="flex flex-col pt-12 text-left">
@@ -48,12 +48,12 @@ export default function Footer() {
             <hr className="border-t border-secondary-700 my-1" />
             <ul className="mt-4 space-y-2 text-works-title">
               <li>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="duration-300 transition-all hover:text-secondary-600">
+                <a href="https://www.linkedin.com/in/justinccoleman" target="_blank" rel="noopener noreferrer" className="duration-300 transition-all hover:text-secondary-600">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="duration-300 transition-all hover:text-secondary-600">
+                <a href="https://github.com/ThisIsNotJustin" target="_blank" rel="noopener noreferrer" className="duration-300 transition-all hover:text-secondary-600">
                   GitHub
                 </a>
               </li>
