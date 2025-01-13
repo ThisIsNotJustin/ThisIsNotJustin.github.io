@@ -1,5 +1,5 @@
 import React from "react";
-import Skills from "../components/Skills"
+import Skills from "./Skills-Go"
 
 const SkillsSection: React.FC = () => {
     return (
