@@ -2,7 +2,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 export default function Contact() {
   return (
-    <section id="contact" className="flex items-center justify-center px-4">
+    <section id="contact" className="flex items-center justify-center px-4 pt-32">
       <div className="bg-secondary-700 rounded-xl p-80 flex shadow-lg mx-auto text-center pb-96 pt-80">
         {/* Container for Heading and Arrow */}
         <div className="relative flex items-center justify-center pt-52 pb-52">
