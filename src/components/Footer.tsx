@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="text-secondary-400 pt-24 px-10 pb-8">
+    <footer className="text-secondary-400 pt-12 px-10 pb-8">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-start gap-16 mb-8">
           {/* Menu Section */}

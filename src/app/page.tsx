@@ -8,6 +8,7 @@ import Content from "../components/content";
 import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import ScrollWrapper from "../components/ui/scrollwrapper";
+import Contact from "../components/Contact"
 import { BackGroundColorProvider, useBackGroundColor } from "../components/ui/background";
 
 const BackGroundWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -35,8 +36,13 @@ export default function Home() {
             <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.35}>
               <Skills />
             </ScrollWrapper>
+            <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.65}>
+              <Contact />
+            </ScrollWrapper>
           </main>
-        <Footer />
+        <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.75}>
+          <Footer />
+        </ScrollWrapper>
       </BackGroundWrapper>
     </BackGroundColorProvider>
   );
