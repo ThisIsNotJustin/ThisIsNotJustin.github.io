@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-24 pb-72">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center mb-16">
           <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
@@ -11,6 +11,7 @@ export default function Skills() {
         {/* Skill Categories */}
         <div className="space-y-16">
           {/* Programming Languages */}
+          <hr className="border-t border-secondary-300 my-1" />
           <div className="flex flex-col md:flex-row items-center md:items-start gap-24">
             <div className="md:w-1/3">
               <h3 className="text-heading-3 font-bold text-secondary-700 mb-3">
@@ -33,6 +34,7 @@ export default function Skills() {
               <li>ARM Assembly</li>
             </ul>
           </div>
+          <hr className="border-t border-secondary-300 my-1" />
 
           {/* Tools */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-24">
@@ -57,6 +59,7 @@ export default function Skills() {
               <li>Unity</li>
             </ul>
           </div>
+          <hr className="border-t border-secondary-300 my-1" />
 
           {/* Frameworks / Libraries */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-24">

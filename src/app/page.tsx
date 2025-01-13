@@ -25,14 +25,14 @@ export default function Home() {
     <BackGroundColorProvider>
       <BackGroundWrapper>
         <Header />
-          <ScrollWrapper bgColor="#0a0a0a">
+          <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.6}>
             <Intro />
           </ScrollWrapper>
           <main className = "px-5 md:px-10 xl:px-20 2xl:px-28">
-            <ScrollWrapper bgColor="#D1D1C7">
+            <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.6}>
               <About />
             </ScrollWrapper>
-            <ScrollWrapper bgColor="#0a0a0a">
+            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.35}>
               <Skills />
             </ScrollWrapper>
             <Content />

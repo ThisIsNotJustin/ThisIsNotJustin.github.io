@@ -8,13 +8,14 @@ import { useBackGroundColor, useBackgroundColor } from "./background"
 type ScrollWrapperProps = React.PropsWithChildren<{
     children: ReactNode;
     bgColor: string;
+    thresholdVal: number;
 }>;
 
-const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children, bgColor }) => {
+const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children, bgColor, thresholdVal }) => {
     const { setBgColor } = useBackGroundColor();
 
     const { ref: sectionRef, inView: sectionInView } = useInView({
-        threshold: 0.6,
+        threshold: thresholdVal,
     });
 
     useEffect(() => {
