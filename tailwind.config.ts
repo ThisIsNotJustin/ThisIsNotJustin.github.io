@@ -18,6 +18,7 @@ export default {
         'heading-2': ['clamp(2.4rem, 8vw, 10rem)', { lineHeight: '1.2' }],
         'heading-3': ['clamp(2rem, 5vw, 2.75rem)', { lineHeight: '1.2' }], 
         'special': ['clamp(2rem, 4vw, 3.25rem)', { lineHeight: '1.2' }],
+        'works-title-large': ['clamp(1.75rem, 3vw, 1.5rem)', { lineHeight: '1.0' }],
         'works-title': ['clamp(1.25rem, 2vw, 1.5rem)', { lineHeight: '1.0' }],
         'body-1': ['clamp(1.1rem, 2vw, 1.3rem)', { lineHeight: '1.2' }], 
         'body-2': ['clamp(1rem, 1.5vw, 1.5rem)', { lineHeight: '1.2' }],

@@ -4,6 +4,7 @@ import Intro from "../components/Intro";
 import About from "../components/About";
 import Content from "../components/content"
 import SkillsSection from "../components/SkillsSection"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <SkillsSection />
       </main>
+      <Footer />
     </div>
   );
 }
