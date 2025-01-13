@@ -35,7 +35,6 @@ export default function Home() {
             <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.35}>
               <Skills />
             </ScrollWrapper>
-            <Content />
           </main>
         <Footer />
       </BackGroundWrapper>

@@ -1,7 +1,7 @@
 export default function Skills() {
   return (
-    <section className="relative py-24 pb-72">
-      <div className="container mx-auto">
+    <section className="py-24 pb-72">
+      <div className="container mx-auto relative">
         <div className="flex flex-col items-center justify-center mb-16">
           <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
             Skills
@@ -12,16 +12,16 @@ export default function Skills() {
         <div className="space-y-16">
           {/* Programming Languages */}
           <hr className="border-t border-secondary-300 my-1" />
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-24">
-            <div className="md:w-1/3">
-              <h3 className="text-heading-3 font-bold text-secondary-700 mb-3">
-                Programming Languages
-              </h3>
-              <p className="text-body-1 text-primary-400">
-                Languages I commonly use to build and deliver full stack software.
+          <div className="relative flex flex-col md:flex-row items-start gap-24 p-1">
+            <h3 className="absolute top-0 left-0 text-heading-3 font-bold text-secondary-700">
+              Programming Languages
+            </h3>
+            <div className="md:w-1/3 mt-12">
+              <p className="text-body-1 text-primary-400 mt-8">
+                Languages I commonly use to build full stack software.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 gap-4 font-bold text-heading-3">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 pt-20">
               <li>C</li>
               <li>Go</li>
               <li>TypeScript</li>
@@ -37,16 +37,16 @@ export default function Skills() {
           <hr className="border-t border-secondary-300 my-1" />
 
           {/* Tools */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-24">
+          <div className="flex flex-col md:flex-row items-start gap-24 p-1">
             <div className="md:w-1/3">
-              <h3 className="text-heading-3 font-bold text-secondary-700 mb-3">
+              <h3 className="text-heading-3 font-bold text-secondary-700 mb-8">
                 Tools
               </h3>
               <p className="text-body-1 text-primary-400">
                 Essential tools that I use in my tech stack to streamline development.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 text-heading-3">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 pt-20">
               <li>Git</li>
               <li>Docker</li>
               <li>PostgreSQL</li>
@@ -62,9 +62,9 @@ export default function Skills() {
           <hr className="border-t border-secondary-300 my-1" />
 
           {/* Frameworks / Libraries */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-24">
+          <div className="flex flex-col md:flex-row items-start gap-24 p-1">
             <div className="md:w-1/3">
-              <h3 className="text-heading-3 font-bold text-secondary-700 mb-3">
+              <h3 className="text-heading-3 font-bold text-secondary-700 mb-8">
                 Frameworks / Libraries
               </h3>
               <p className="text-body-1 text-primary-400">
