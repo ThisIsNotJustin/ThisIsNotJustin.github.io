@@ -92,7 +92,7 @@ export const FloatingNav = ({
             exit={{ opacity: 0, y: -20 }}
             className="fixed top-0 z-50 flex w-full items-center justify-end px-5 pt-5"
           >
-            <div className="flex items-center justify-center text-heading-3 p-5 overflow-hidden w-[60px] h-[60px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group hover:duration-300 duration-300">
+            <div className="flex items-center justify-center text-heading-3 p-5 overflow-hidden w-[60px] h-[60px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group hover:duration-300 duration-300 hover:scale-90">
               <Checkbox menuOpen={menuOpen} toggleMenu={toggleMenu}/>
             </div>
             

@@ -14,7 +14,7 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children, bgColor }) => {
     const { setBgColor } = useBackGroundColor();
 
     const { ref: sectionRef, inView: sectionInView } = useInView({
-        threshold: 0.5,
+        threshold: 0.6,
     });
 
     useEffect(() => {
