@@ -3,7 +3,7 @@ export default function Skills() {
     <section className="relative py-24">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center mb-16">
-          <h2 className="text-5xl sm:text-heading-2 font-medium uppercase text-secondary-700">
+          <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
             Skills
           </h2>
         </div>
