@@ -5,7 +5,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/balencigo",
     "stargazers_count": 2,
     "topics": [
-      "go"
+      "go",
+      "software-engineering",
+      "web-development"
     ],
   },
   {
@@ -15,7 +17,8 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "arm64",
-      "c"
+      "c",
+      "embedded-systems"
     ],
   },
   {
@@ -24,7 +27,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/BestBuy-GPU-AutoBuyer",
     "stargazers_count": 1,
     "topics": [
-      "python"
+      "python",
+      "software-engineering"
     ],
   },
   {
@@ -32,7 +36,10 @@ const repositories = [
     "description": "",
     "html_url": "https://github.com/ThisIsNotJustin/blinky",
     "stargazers_count": 0,
-    "topics": [],
+    "topics": [
+      "c",
+      "embedded-systems"
+    ],
   },
   {
     "name": "circular_buffer",
@@ -40,7 +47,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/circular_buffer",
     "stargazers_count": 2,
     "topics": [
-      "c"
+      "c",
+      "embedded-systems"
     ],
   },
   {
@@ -48,7 +56,9 @@ const repositories = [
     "description": "",
     "html_url": "https://github.com/ThisIsNotJustin/desk_setup",
     "stargazers_count": 0,
-    "topics": [],
+    "topics": [
+      "3d-models"
+    ],
   },
   {
     "name": "DogBreed_Identifier",
@@ -56,7 +66,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/DogBreed_Identifier",
     "stargazers_count": 2,
     "topics": [
-      "python"
+      "python",
+      "ai-ml"
     ],
   },
   {
@@ -65,7 +76,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/gocator",
     "stargazers_count": 2,
     "topics": [
-      "go"
+      "go",
+      "ai-ml",
+      "software-engineering"
     ],
   },
   {
@@ -74,7 +87,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/golden_retriever_detector",
     "stargazers_count": 1,
     "topics": [
-      "python"
+      "python",
+      "software-engineering",
+      "ai-ml"
     ],
   },
   {
@@ -83,7 +98,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/goshort",
     "stargazers_count": 2,
     "topics": [
-      "go"
+      "go",
+      "web-development"
     ],
   },
   {
@@ -101,7 +117,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/https_server_c",
     "stargazers_count": 1,
     "topics": [
-      "c"
+      "c",
+      "software-engineering"
     ],
   },
   {
@@ -110,7 +127,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/iOSWeatherApp",
     "stargazers_count": 1,
     "topics": [
-      "swift"
+      "swift",
+      "app-development"
     ],
   },
   {
@@ -119,7 +137,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/linus_list",
     "stargazers_count": 1,
     "topics": [
-      "c"
+      "c",
+      "software-engineering"
     ],
   },
   {
@@ -129,7 +148,8 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "swift",
-      "swiftui"
+      "swiftui",
+      "app-development"
     ],
   },
   {
@@ -139,7 +159,8 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "javascript",
-      "reactjs"
+      "reactjs",
+      "web-development"
     ],
   },
   {
@@ -148,7 +169,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/MNIST_DigitRecognizer",
     "stargazers_count": 1,
     "topics": [
-      "python"
+      "python",
+      "ai-ml"
     ],
   },
   {
@@ -158,7 +180,8 @@ const repositories = [
     "stargazers_count": 3,
     "topics": [
       "react-native",
-      "typescript"
+      "typescript",
+      "app-development"
     ],
   },
   {
@@ -168,7 +191,9 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "c",
-      "neural-network"
+      "neural-network",
+      "ai-ml",
+      "software-engineering"
     ],
   },
   {
@@ -179,7 +204,8 @@ const repositories = [
     "topics": [
       "javascript",
       "reactjs",
-      "tailwindcss"
+      "tailwindcss",
+      "web-development"
     ],
   },
   {
@@ -188,7 +214,8 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/particlecim",
     "stargazers_count": 2,
     "topics": [
-      "cpp"
+      "cpp",
+      "software-engineering"
     ],
   },
   {
@@ -197,7 +224,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/pongtex",
     "stargazers_count": 2,
     "topics": [
-      "c"
+      "c",
+      "software-engineering",
+      "embedded-systems"
     ],
   },
   {
@@ -205,7 +234,10 @@ const repositories = [
     "description": "",
     "html_url": "https://github.com/ThisIsNotJustin/rand-display",
     "stargazers_count": 0,
-    "topics": [],
+    "topics": [
+      "c",
+      "embedded-systems"
+    ],
   },
   {
     "name": "snake-game",
@@ -235,7 +267,8 @@ const repositories = [
       "typescript",
       "go",
       "tailwindcss",
-      "nextjs"
+      "nextjs",
+      "web-development"
     ],
   },
   {

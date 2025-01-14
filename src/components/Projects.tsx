@@ -1,24 +1,56 @@
 "use client";
+
 import Image from "next/image";
-import React, { useState, useRef } from "react";
-import { Carousel, Card } from "./ui/apple-cards-carousel";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { Carousel, Card, Label, CarouselContext } from "./ui/apple-cards-carousel";
 import repositories from "../lib/repositories";
 
 export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(3);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const { currentIndex, setCurrentIndex } = useContext(CarouselContext);
+  const [selectedCategory, setSelectedCategory] = useState(categories[currentIndex]);
+
+  useEffect(() => {
+    setSelectedCategory(categories[currentIndex]);
+  }, [currentIndex]);
+
+  const handleCategorySelect = (index: number) => {
+    setCurrentIndex(index);
+    setSelectedCategory(categories[index]);
+  }
 
   const cards = data.map((card, index) => (
-    <Card key={index} card={card} index={index} layout={true} />
+    <Label key={index} 
+      card={card} 
+      index={index} 
+      layout={true} 
+      onClick={() => handleCategorySelect(index)} 
+      isSelected={currentIndex === index}
+    />
   ));
 
-  const visibleProjects = repositories.slice(0, visibleCount);
+  const normalize = (str: string) => {
+    if (!str) return "";
+    if (str == "AI & ML") return "ai-ml";
+
+    return str.trim().toLowerCase().replace(/[ &]/g, "-");
+  };
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? repositories
+      : repositories.filter((repo) =>
+          repo.topics.includes(normalize(selectedCategory))
+        );
+
+  const visibleProjects = filteredProjects.slice(0, visibleCount);
 
   const handleShowMore = () => {
     if (visibleCount < 10) {
-      setVisibleCount((prevCount) => Math.min(10, repositories.length));
+      setVisibleCount((prevCount) => Math.min(10, filteredProjects.length));
     } else {
-      setVisibleCount((prevCount) => Math.min(prevCount + 10, repositories.length));
+      setVisibleCount((prevCount) => Math.min(prevCount + 10, filteredProjects.length));
     }
   };
 
@@ -31,7 +63,7 @@ export default function Projects() {
       <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
         Projects
       </h2>
-      <Carousel items={cards} />
+      <Carousel items={cards} onCategorySelect={handleCategorySelect}/>
       <div className="mt-10">
         {visibleProjects.map((repo, index) => (
           <div key={index} className="bg-[#F5F5F7] p-8 md:p-14 rounded-3xl mb-4">
@@ -51,7 +83,7 @@ export default function Projects() {
             </a>
           </div>
         ))}
-        {visibleCount < repositories.length && (
+        {visibleCount < filteredProjects.length && (
           <button
             onClick={handleShowMore}
             className="mt-4 px-6 py-2 text-white"
@@ -108,30 +140,17 @@ const DummyContent = () => {
   );
 };
 
-const data = [
-  {
-    category: "App Development",
-    content: <DummyContent />,
-  },
-  {
-    category: "AI & ML",
-    content: <DummyContent />,
-  },
-  {
-    category: "Software Engineering",
-    content: <DummyContent />,
-  },
-
-  {
-    category: "Embedded Systems",
-    content: <DummyContent />,
-  },
-  {
-    category: "Web Development",
-    content: <DummyContent />,
-  },
-  {
-    category: "3D Modelling",
-    content: <DummyContent />,
-  },
+const categories = [
+  "All",
+  "App Development",
+  "AI & ML",
+  "Software Engineering",
+  "Embedded Systems",
+  "Web Development",
+  "3D Models",
 ];
+
+const data = categories.map((category) => ({
+  category,
+  content: <DummyContent />,
+}));

@@ -16,6 +16,7 @@ import { useOutsideClick } from "../hooks/use-outside-click";
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
+  onCategorySelect: (index: number) => void;
 }
 
 type Card = {
@@ -26,12 +27,14 @@ type Card = {
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
+  setCurrentIndex: (index: number) => void;
 }>({
-  onCardClose: () => { },
+  onCardClose: () => {},
   currentIndex: 0,
+  setCurrentIndex: () => {},
 });
 
-export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
+export const Carousel = ({ items, initialScroll = 0, onCategorySelect }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -54,15 +57,19 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
-      scrollToIndex(currentIndex - 1);
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      scrollToIndex(newIndex);
+      onCategorySelect(newIndex);
     }
   };
 
   const scrollRight = () => {
     if (currentIndex < items.length - 1) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
-      scrollToIndex(currentIndex + 1);
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      scrollToIndex(newIndex);
+      onCategorySelect(newIndex);
     }
   };
 
@@ -70,7 +77,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     if (carouselRef.current) {
       const cardWidth = isMobile() ? 230 : 384;
       const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * index;
+      const scrollPosition = (cardWidth + gap) * index - (carouselRef.current.clientWidth / 2 - cardWidth / 2);
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
@@ -97,7 +104,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   return (
     <CarouselContext.Provider
-      value={{ onCardClose: handleCardClose, currentIndex }}
+      value={{ onCardClose: handleCardClose, currentIndex, setCurrentIndex }}
     >
       <div className="relative w-full">
         <div
@@ -105,7 +112,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           ref={carouselRef}
           onScroll={checkScrollability}
         >
-
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
@@ -125,13 +131,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     duration: 0.5,
                     delay: 0.2 * index,
                     ease: "easeOut",
-                    once: true,
+                    once: false,
                   },
                 }}
                 key={"card" + index}
                 className={cn(
                   "rounded-3xl",
-                  currentIndex === index ? "border-2 border-primary-400" : ""
                 )}
               >
                 {item} 
@@ -141,14 +146,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
         <div className="=">
           <button
-            className="absolute left-0 top-40 z-40 h-10 w-10 rounded-full bg-gray-100 opacity-40 hover:opacity-75 flex items-center justify-center"
+            className="absolute left-0 top-40 z-40 h-10 w-10 rounded-full bg-gray-100 opacity-40 hover:opacity-75 flex items-center justify-center disabled:opacity-20"
             onClick={scrollLeft}
             disabled={currentIndex === 0}
           >
             <HiArrowNarrowLeft className="h-6 w-6 text-gray-500" />
           </button>
           <button
-            className="absolute right-0 top-40 z-40 h-10 w-10 rounded-full bg-gray-100 opacity-40 hover:opacity-75 flex items-center justify-center"
+            className="absolute right-0 top-40 z-40 h-10 w-10 rounded-full bg-gray-100 opacity-40 hover:opacity-75 flex items-center justify-center disabled:opacity-20"
             onClick={scrollRight}
             disabled={currentIndex === items.length - 1}
           >
@@ -157,6 +162,48 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
       </div>
     </CarouselContext.Provider>
+  );
+};
+
+export const Label = ({
+  card,
+  index,
+  layout = false,
+  onClick,
+}: {
+  card: Card;
+  index: number;
+  layout?: boolean;
+  onClick: () => void;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { onCardClose, currentIndex, setCurrentIndex } = useContext(CarouselContext);
+
+  const handleCLick = () => {
+    setCurrentIndex(index);
+    onClick();
+  }
+
+  return (
+    <>
+      <motion.button
+        layoutId={layout ? `card-${card.category}` : undefined}
+        className={cn(
+          "rounded-3xl bg-gray-100 dark:bg-red-900 opacity-100 overflow-hidden flex items-start justify-start relative z-10",
+          currentIndex === index ? "border-2 border-primary-400" : ""
+        )}
+        onClick={handleCLick}
+      >
+        <div className="relative z-40 p-4">
+          <motion.p
+            layoutId={layout ? `category-${card.category}` : undefined}
+            className="text-white text-heading-3 font-semibold whitespace-nowrap"
+          >
+            {card.category}
+          </motion.p>
+        </div>
+      </motion.button>
+    </>
   );
 };
 
@@ -218,7 +265,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.category}` : undefined}
-              className="max-w-5xl mx-auto dark:bg-transparent h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl relative"
+              className="max-w-5xl mx-auto dark:bg-red-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl relative"
             >
               <button
                 className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
@@ -239,8 +286,11 @@ export const Card = ({
       </AnimatePresence>
       <motion.button
         layoutId={layout ? `card-${card.category}` : undefined}
-        onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-red-900 opacity-100 overflow-hidden flex items-start justify-start relative z-10"
+        onClick={onClick}
+        className={cn(
+          "rounded-3xl bg-gray-100 dark:bg-red-900 opacity-100 overflow-hidden flex items-start justify-start relative z-10",
+          currentIndex === index ? "border-2 border-primary-400" : ""
+        )}
       >
         <div className="relative z-40 p-4">
           <motion.p
