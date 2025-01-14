@@ -37,7 +37,9 @@ export default function Home() {
             <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.4}>
               <Skills />
             </ScrollWrapper>
+            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.8}>
               <Projects />
+            </ScrollWrapper>
             <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.45}>
               <Contact />
             </ScrollWrapper>
