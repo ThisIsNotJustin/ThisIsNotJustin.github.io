@@ -16,6 +16,7 @@ type Repository struct {
 	Topics      []string `json:"topics"`
 }
 
+// change name to main to run
 func repos() {
 	username := "ThisIsNotJustin"
 	url := fmt.Sprintf("https://api.github.com/users/%s/repos", username)

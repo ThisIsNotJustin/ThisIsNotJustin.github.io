@@ -1,4 +1,4 @@
-export const repositories = [
+const repositories = [
   {
     "name": "balencigo",
     "description": "Lightweight and scalable loadbalancer written in Go with a focus on concurrency",
@@ -248,3 +248,5 @@ export const repositories = [
     ],
   }
 ];
+
+export default repositories;
