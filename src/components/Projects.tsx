@@ -38,13 +38,15 @@ export default function Projects() {
   };
 
   const filteredProjects =
-    selectedCategory === "All"
+    selectedCategory === "App Development"
       ? repositories
       : repositories.filter((repo) =>
           repo.topics.includes(normalize(selectedCategory))
         );
 
-  const visibleProjects = filteredProjects.slice(0, visibleCount);
+  const sortedProjects = filteredProjects.sort((a,b) => b.stargazers_count - a.stargazers_count);
+
+  const visibleProjects = sortedProjects.slice(0, visibleCount);
 
   const handleShowMore = () => {
     if (visibleCount < 10) {
@@ -141,13 +143,13 @@ const DummyContent = () => {
 };
 
 const categories = [
-  "All",
   "App Development",
   "AI & ML",
   "Software Engineering",
   "Embedded Systems",
   "Web Development",
   "3D Models",
+  "All",
 ];
 
 const data = categories.map((category) => ({
