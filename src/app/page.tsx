@@ -16,7 +16,7 @@ const BackGroundWrapper = ({ children }: { children: React.ReactNode }) => {
   const { bgColor } = useBackGroundColor();
 
   return (
-    <div style={{ backgroundColor: bgColor }} className="transition-colors duration-500 min-h-screen">
+    <div style={{ backgroundColor: bgColor }} className="transition-colors duration-500">
       {children}
     </div>
   );
@@ -34,10 +34,10 @@ export default function Home() {
             <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.6}>
               <About />
             </ScrollWrapper>
-            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.4}>
+            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.2}>
               <Skills />
             </ScrollWrapper>
-            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.8}>
+            <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.2}>
               <Projects />
             </ScrollWrapper>
             <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.45}>
