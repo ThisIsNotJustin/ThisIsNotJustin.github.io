@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
 interface TextParallaxContentProps {
-  imgUrl: string;
   subheading: string;
   heading: string;
   children: React.ReactNode;
@@ -24,21 +23,18 @@ export default function TextParallaxContentExample() {
   return (
     <div className="">
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Collaborate"
         heading="Built for all of us."
       >
-        <ExampleContent />
+
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Quality"
         heading="Never compromise."
       >
         <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Modern"
         heading="Dress for the best."
       >
@@ -50,20 +46,54 @@ export default function TextParallaxContentExample() {
 
 const IMG_PADDING = 12;
 
-const TextParallaxContent: React.FC<TextParallaxContentProps> = ({ imgUrl, subheading, heading, children }) => {
+/*
+  <OverlayCopy heading={heading} subheading={subheading} />
+*/
+const TextParallaxContent: React.FC<TextParallaxContentProps> = ({ subheading, heading, children }) => {
   return (
     <div
       style={{
-        paddingLeft: IMG_PADDING,
-        paddingRight: IMG_PADDING,
+        paddingLeft: 0,
+        paddingRight: 0,
       }}
     >
       <div className="relative h-[150vh]">
-        <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} />
+        <StickyBackground />
+        <OverlayCopy />
       </div>
       {children}
     </div>
+  );
+};
+
+const StickyBackground = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, .5], [1.05, 1.125]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  return (
+    <motion.div
+      style={{
+        backgroundColor: '#3f2a14',
+        height: `calc(100vh - ${IMG_PADDING * 2}px)`,
+        top: IMG_PADDING,
+        scale,
+      }}
+      ref={targetRef}
+      className="z-0 overflow-hidden rounded-3xl"
+    >
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          opacity,
+        }}
+      />
+    </motion.div>
   );
 };
 
