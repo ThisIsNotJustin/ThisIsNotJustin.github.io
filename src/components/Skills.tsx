@@ -62,19 +62,20 @@ export default function Skills() {
           <hr className="border-t border-secondary-300 my-1" />
 
           {/* Frameworks / Libraries */}
-          <div className="flex flex-col md:flex-row items-start gap-24 p-1">
-            <div className="md:w-1/3">
-              <h3 className="text-heading-3 font-bold text-secondary-700 mb-8">
-                Frameworks / Libraries
-              </h3>
-              <p className="text-body-1 text-primary-400">
+          <div className="relative flex flex-col md:flex-row items-start gap-24 p-1">
+            <h3 className="absolute top-0 left-0 text-heading-3 font-bold text-secondary-700">
+              Libraries & Frameworks 
+            </h3>
+            <div className="md:w-1/3 mt-12">
+              <p className="text-body-1 text-primary-400 mt-8">
                 Powerful frameworks and libraries I use to create scalable, high-quality applications.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 text-heading-3">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-12 text-heading-3 pt-20">
               <li>NextJS</li>
-              <li>React Native</li>
               <li>Node.js</li>
+              <li>Motion</li>
+              <li>React Native</li>
               <li>Express</li>
               <li>Tensorflow</li>
               <li>React</li>
