@@ -100,9 +100,9 @@ export const FloatingNav = ({
         )}
         {menuOpen && (
         <Sidebar open={menuOpen} setOpen={setMenuOpen}>
-          <SidebarBody className="pt-96 pl-20">
+          <SidebarBody className="text-center justify-center pl-20">
             {navItems.map((item, index) => (
-              <SidebarLink key={`${item.label}-${index}`} link={{ label: item.label, href: item.href }} />
+              <SidebarLink key={`${item.label}-${index}`} link={{ label: item.label, href: item.href }}/>
             ))}
           </SidebarBody>
         </Sidebar>

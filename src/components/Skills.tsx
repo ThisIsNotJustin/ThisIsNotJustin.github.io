@@ -2,7 +2,7 @@ export default function Skills() {
   return (
     <section className="py-24 pb-52">
       <div className="container mx-auto relative">
-        <div className="flex flex-col items-center justify-center mb-16">
+        <div className="flex flex-col items-center justify-center mb-8">
           <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
             Skills
           </h2>

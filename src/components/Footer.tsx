@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Socials Section */}
           <div className="w-full lg:w-full sm:w-full mb-6 md:mb-0">
             <span className="font-bold text-works-title-large text-white">Socials</span>
-            <hr className="border-t border-secondary-700 my-1" />
+            <hr className="border-t border-secondary-700 my-1 mr-8 lg:mr-0" />
             <ul className="mt-4 space-y-2 text-works-title">
               <li>
                 <a href="https://www.linkedin.com/in/justinccoleman" target="_blank" rel="noopener noreferrer" className="duration-300 transition-all hover:text-secondary-600">
@@ -64,7 +64,7 @@ export default function Footer() {
           <div className="absolute right-10 pb-4 md:mt-0">
             <button
               onClick={scrollUp}
-              className="flex items-center transition justify-center text-heading-3 p-5 overflow-hidden w-[80px] h-[80px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group hover:duration-300 duration-300"
+              className="flex items-center transition justify-center text-heading-3 p-5 overflow-hidden w-[80px] h-[80px] bg-secondary-600 hover:bg-secondary-700 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full group opacity-70 lg:opacity-100 hover:duration-300 duration-300"
             >
               <IoArrowUp />
             </button>

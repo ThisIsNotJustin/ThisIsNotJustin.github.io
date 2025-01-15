@@ -9,10 +9,10 @@ const Checkbox = ({ menuOpen, toggleMenu }: { menuOpen: boolean; toggleMenu: () 
         onChange={toggleMenu}
         checked={menuOpen}
       />
-      <div className="relative flex flex-col gap-2 w-8 h-8 justify-center ">
-        <div className="rounded-2xl h-[3px] w-1/2 bg-black duration-500 peer-checked:rotate-[225deg] origin-right peer-checked:-translate-x-[12px] peer-checked:-translate-y-[1px] opacity-75" />
-        <div className="rounded-2xl h-[3px] w-full bg-black duration-500 peer-checked:-rotate-45 opacity-75" />
-        <div className="rounded-2xl h-[3px] w-1/2 bg-black duration-500 place-self-end peer-checked:rotate-[225deg] origin-left peer-checked:translate-x-[12px] peer-checked:translate-y-[1px] opacity-75" />
+      <div className="relative flex flex-col gap-2 w-8 h-8 justify-center">
+        <div className={`rounded-2xl h-[3px] w-1/2 bg-white duration-500 ${menuOpen ? 'rotate-[225deg] -translate-x-[12px] -translate-y-[1px] origin-right' : ''}`} />
+        <div className={`rounded-2xl h-[3px] w-full bg-white duration-500 ${menuOpen ? '-rotate-45' : ''}`} />
+        <div className={`rounded-2xl h-[3px] w-1/2 bg-white duration-500 place-self-end ${menuOpen ? 'rotate-[225deg] translate-x-[12px] translate-y-[1px] origin-left' : ''}`} />
       </div>
       {/* fix the clickable area of the button*/}
       <style jsx>{`

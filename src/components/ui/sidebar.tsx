@@ -3,6 +3,7 @@ import { cn } from "../../lib/utils";
 import Link, { LinkProps } from "next/link";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Checkbox from "./checkbox";
 
 interface Links {
   label: string;
@@ -91,7 +92,7 @@ export const DesktopSidebar = ({
           className
         )}
         animate={{
-          width: animate ? (open ? "75%" : "10%") : "75%",
+          width: animate ? (open ? "60%" : "10%") : "60%",
           right: open ? "0%" : "-65%",
         }}
         initial={{ right: "-65%" }}
@@ -114,6 +115,8 @@ export const MobileSidebar = ({
   ...props
 }: React.ComponentProps<"div">) => {
   const { open, setOpen } = useSidebar();
+  const toggleMenu = () => setOpen(!open);
+
   return (
     <>
       <div
@@ -124,8 +127,8 @@ export const MobileSidebar = ({
       >
         <div className="flex justify-end z-20 w-full">
           <div
-            className="text-neutral-800  dark:text-neutral-200"
-            onClick={() => setOpen(!open)}
+            className=""
+            onClick={toggleMenu}
           >
         </div>
         </div>
@@ -140,13 +143,13 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-secondary-700 p-10 z-[10] flex flex-col justify-between",
                 className
               )}
             >
               <div
-                className="absolute right-10 top-10 z-50 text-neutral-800 dark:text-neutral-200"
-                onClick={() => setOpen(!open)}
+                className="absolute right-10 top-10 text-center mx-auto justify-center z-50 text-neutral-200"
+                onClick={toggleMenu}
               >
               </div>
               {children}
@@ -167,7 +170,7 @@ export const SidebarLink = ({
   className?: string;
   props?: LinkProps;
 }) => {
-  const { open, animate } = useSidebar();
+  const { open, setOpen, animate } = useSidebar();
   return (
     <Link
       href={link.href}
@@ -175,6 +178,7 @@ export const SidebarLink = ({
         "flex text-title items-center justify-start gap-2 group/sidebar py-2",
         className
       )}
+      onClick={() => setOpen(false)}
       {...props}
     >
 
