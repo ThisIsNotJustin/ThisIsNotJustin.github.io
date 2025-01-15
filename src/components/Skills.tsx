@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <section className="py-24 pb-72">
+    <section className="py-24 pb-52">
       <div className="container mx-auto relative">
         <div className="flex flex-col items-center justify-center mb-16">
           <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
@@ -21,7 +21,7 @@ export default function Skills() {
                 Languages I commonly use to build full stack software.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 pt-20">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 mt-0 pt-0 lg:pt-20">
               <li>C</li>
               <li>Go</li>
               <li>TypeScript</li>
@@ -46,7 +46,7 @@ export default function Skills() {
                 Essential tools that I use in my tech stack to streamline development.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 pt-20">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 mt-0 pt-0 lg:pt-20">
               <li>Git</li>
               <li>Docker</li>
               <li>PostgreSQL</li>
@@ -71,7 +71,7 @@ export default function Skills() {
                 Powerful frameworks and libraries I use to create scalable, high-quality applications.
               </p>
             </div>
-            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-12 text-heading-3 pt-20">
+            <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-12 text-heading-3 mt-0 pt-0 lg:pt-20">
               <li>NextJS</li>
               <li>Node.js</li>
               <li>Motion</li>

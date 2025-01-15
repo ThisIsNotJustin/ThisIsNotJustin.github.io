@@ -61,7 +61,7 @@ export default function Projects() {
   };
 
   return (
-    <div ref={projectsRef} id="projects" className="mx-auto items-center justify-center flex flex-col w-full h-full py-20">
+    <div ref={projectsRef} id="projects" className="mx-auto items-center justify-center flex flex-col w-full h-full py-20 pb-80">
       <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
         Projects
       </h2>

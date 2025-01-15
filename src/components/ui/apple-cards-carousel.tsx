@@ -113,8 +113,7 @@ export const Carousel = ({ items, initialScroll = 0, onCategorySelect }: Carouse
         >
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              "max-w-4xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
+              "flex flex-row justify-start gap-4 px-4",
             )}
           >
             {items.map((item, index) => (
