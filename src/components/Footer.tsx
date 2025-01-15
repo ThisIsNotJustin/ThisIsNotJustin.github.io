@@ -1,6 +1,7 @@
 "use client";
 
 import { IoArrowUp } from "react-icons/io5";
+import Link from "next/link";
 
 export default function Footer() {
   const scrollUp = () => {
@@ -20,16 +21,16 @@ export default function Footer() {
             <hr className="border-t border-secondary-700 my-1" />
             <ul className="mt-4 space-y-2 text-works-title">
               <li>
-                <a href="/#intro" className="duration-300 transition-all hover:text-secondary-600">Home</a>
+                <Link href="/#intro" className="duration-300 transition-all hover:text-secondary-600">Home</Link>
               </li>
               <li>
-                <a href="/#about" className="duration-300 transition-all hover:text-secondary-600">About</a>
+                <Link href="/#about" className="duration-300 transition-all hover:text-secondary-600">About</Link>
               </li>
               <li>
-                <a href="/#projects" className="duration-300 transition-all hover:text-secondary-600">Projects</a>
+                <Link href="/#projects" className="duration-300 transition-all hover:text-secondary-600">Projects</Link>
               </li>
               <li>
-                <a href="/#contact" className="duration-300 transition-all hover:text-secondary-600">Contact</a>
+                <Link href="/#contact" className="duration-300 transition-all hover:text-secondary-600">Contact</Link>
               </li>
             </ul>
             <div className="flex flex-col pt-12 text-left">

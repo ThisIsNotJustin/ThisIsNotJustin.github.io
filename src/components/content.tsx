@@ -10,9 +10,11 @@ interface TextParallaxContentProps {
   children: React.ReactNode;
 }
 
+/*
 interface StickyImageProps {
   imgUrl: string;
 }
+*/
 
 interface OverlayCopyProps {
   subheading: string;
@@ -26,7 +28,7 @@ export default function TextParallaxContentExample() {
         subheading="Collaborate"
         heading="Built for all of us."
       >
-
+        <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
         subheading="Quality"
@@ -46,9 +48,6 @@ export default function TextParallaxContentExample() {
 
 const IMG_PADDING = 12;
 
-/*
-  <OverlayCopy heading={heading} subheading={subheading} />
-*/
 const TextParallaxContent: React.FC<TextParallaxContentProps> = ({ subheading, heading, children }) => {
   return (
     <div
@@ -59,7 +58,7 @@ const TextParallaxContent: React.FC<TextParallaxContentProps> = ({ subheading, h
     >
       <div className="relative h-[150vh]">
         <StickyBackground />
-        <OverlayCopy />
+        <OverlayCopy subheading={subheading} heading={heading} />
       </div>
       {children}
     </div>
@@ -97,6 +96,7 @@ const StickyBackground = () => {
   );
 };
 
+/*
 const StickyImage: React.FC<StickyImageProps> = ({ imgUrl }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -129,6 +129,7 @@ const StickyImage: React.FC<StickyImageProps> = ({ imgUrl }) => {
     </motion.div>
   );
 };
+*/
 
 const OverlayCopy: React.FC<OverlayCopyProps> = ({ subheading, heading }) => {
   const targetRef = useRef(null);

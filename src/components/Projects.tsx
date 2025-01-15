@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { Carousel, Card, Label, CarouselContext } from "./ui/apple-cards-carousel";
+import { Carousel, Label, CarouselContext } from "./ui/apple-cards-carousel";
 import repositories from "../lib/repositories";
 
 export default function Projects() {
@@ -38,7 +38,7 @@ export default function Projects() {
   };
 
   const filteredProjects =
-    selectedCategory === "App Development"
+    selectedCategory === "All"
       ? repositories
       : repositories.filter((repo) =>
           repo.topics.includes(normalize(selectedCategory))
@@ -50,7 +50,7 @@ export default function Projects() {
 
   const handleShowMore = () => {
     if (visibleCount < 10) {
-      setVisibleCount((prevCount) => Math.min(10, filteredProjects.length));
+      setVisibleCount(Math.min(10, filteredProjects.length));
     } else {
       setVisibleCount((prevCount) => Math.min(prevCount + 10, filteredProjects.length));
     }

@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { useBackGroundColor, useBackgroundColor } from "./background"
+import { useBackGroundColor } from "./background"
 
 type ScrollWrapperProps = React.PropsWithChildren<{
-    children: ReactNode;
+    children: React.ReactNode;
     bgColor: string;
     thresholdVal: number;
 }>;

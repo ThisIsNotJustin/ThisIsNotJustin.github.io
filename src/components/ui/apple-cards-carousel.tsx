@@ -1,20 +1,21 @@
 "use client";
 import React, {
   useEffect,
-  useRef,
+  // useRef,
   useState,
   createContext,
   useContext,
 } from "react";
-import { IoIosClose } from "react-icons/io";
+// import { IoIosClose } from "react-icons/io";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Image, { ImageProps } from "next/image";
-import { useOutsideClick } from "../hooks/use-outside-click";
+// import AnimatePresence from "framer-motion"
+import { motion } from "framer-motion";
+// import Image, { ImageProps } from "next/image";
+// import { useOutsideClick } from "../hooks/use-outside-click";
 
 interface CarouselProps {
-  items: JSX.Element[];
+  items: React.JSX.Element[];
   initialScroll?: number;
   onCategorySelect: (index: number) => void;
 }
@@ -36,8 +37,6 @@ export const CarouselContext = createContext<{
 
 export const Carousel = ({ items, initialScroll = 0, onCategorySelect }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -50,8 +49,8 @@ export const Carousel = ({ items, initialScroll = 0, onCategorySelect }: Carouse
   const checkScrollability = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+      // setCanScrollLeft(scrollLeft > 0);
+      // setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
     }
   };
 
@@ -170,14 +169,16 @@ export const Label = ({
   index,
   layout = false,
   onClick,
+  isSelected,
 }: {
   card: Card;
   index: number;
   layout?: boolean;
   onClick: () => void;
+  isSelected: boolean;
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex, setCurrentIndex } = useContext(CarouselContext);
+  // const containerRef = useRef<HTMLDivElement>(null);
+  const { currentIndex, setCurrentIndex } = useContext(CarouselContext);
 
   const handleCLick = () => {
     setCurrentIndex(index);
@@ -207,6 +208,7 @@ export const Label = ({
   );
 };
 
+/*
 export const Card = ({
   card,
   index,
@@ -304,7 +306,9 @@ export const Card = ({
     </>
   );
 };
+*/
 
+/*
 export const BlurImage = ({
   height,
   width,
@@ -331,3 +335,4 @@ export const BlurImage = ({
     />
   );
 };
+*/
