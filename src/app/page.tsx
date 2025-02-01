@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 import ScrollWrapper from "../components/ui/scrollwrapper";
 import Contact from "../components/Contact";
 import Projects from "../components/Projects";
-import Bento from "../components/Bento";
 import { BackGroundColorProvider, useBackGroundColor } from "../components/ui/background";
 
 const BackGroundWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -38,7 +37,6 @@ export default function Home() {
             </ScrollWrapper>
             <ScrollWrapper bgColor="#0a0a0a" thresholdVal={0.2}>
               <Projects />
-              <Bento />
             </ScrollWrapper>
             <ScrollWrapper bgColor="#D1D1C7" thresholdVal={0.45}>
               <Contact />

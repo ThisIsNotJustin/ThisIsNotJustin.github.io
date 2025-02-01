@@ -189,15 +189,16 @@ export const Label = ({
       <motion.button
         layoutId={layout ? `card-${card.category}` : undefined}
         className={cn(
-          "rounded-3xl bg-gray-100 dark:bg-red-900 opacity-100 overflow-hidden flex items-start justify-start relative z-10",
-          currentIndex === index ? "border-2 border-primary-400" : ""
+          "rounded-3xl bg-transparent overflow-hidden flex items-start justify-start relative z-10 text-heading-3 text-secondary-500",
+              currentIndex === index ? "text-heading-3 scale-125 text-primary-200" : ""
         )}
         onClick={handleCLick}
       >
         <div className="relative z-40 p-4">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-heading-3 font-semibold whitespace-nowrap"
+            className={cn("text-heading-3 font-semibold whitespace-nowrap"
+            )}
           >
             {card.category}
           </motion.p>
