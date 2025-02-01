@@ -39,6 +39,17 @@ export default function Projects() {
     return str.trim().toLowerCase().replace(/[ &]/g, "-");
   };
 
+  interface Repository {
+    name: string;
+    description?: string;
+    url?: string;
+    stars?: number;
+    topics?: string[];
+    header: React.JSX.Element;
+    className: string;
+    icon: React.JSX.Element;
+  }
+
   const arrangeProjects = (projects: Repository[]) => {
     // Create pairs of projects
     const pairs: Repository[][] = [];
