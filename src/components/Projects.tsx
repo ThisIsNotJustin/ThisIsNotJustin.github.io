@@ -3,7 +3,9 @@
 import Image from "next/image";
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Carousel, Label, CarouselContext } from "./ui/apple-cards-carousel";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import repositories from "../lib/repositories";
+import { IoArrowUp } from "react-icons/io5";
 
 export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(3);
@@ -21,32 +23,73 @@ export default function Projects() {
   }
 
   const cards = data.map((card, index) => (
-    <Label key={index} 
-      card={card} 
-      index={index} 
-      layout={true} 
-      onClick={() => handleCategorySelect(index)} 
+    <Label key={index}
+      card={card}
+      index={index}
+      layout={true}
+      onClick={() => handleCategorySelect(index)}
       isSelected={currentIndex === index}
     />
   ));
 
   const normalize = (str: string) => {
     if (!str) return "";
-    if (str == "AI & ML") return "ai-ml";
+    if (str === "AI & ML") return "ai-ml";
 
     return str.trim().toLowerCase().replace(/[ &]/g, "-");
+  };
+
+  const arrangeProjects = (projects: Repository[]) => {
+    // Create pairs of projects
+    const pairs: Repository[][] = [];
+    const processedProjects = [...projects];
+  
+    let index = 0;
+    while (processedProjects.length > 0) {
+      const pair: Repository[] = [];
+      
+      // Find a span-2 project
+      const span2 = processedProjects.find(p => 
+        p.className?.includes('md:col-span-2')
+      );
+      
+      // Find a span-1 project
+      const span1 = processedProjects.find(p => 
+        !p.className?.includes('md:col-span-2')
+      );
+      
+      if (span2 && span1) {
+        if (index % 2 == 0) {
+          pair.push(span2);
+          pair.push(span1);
+        } else {
+          pair.push(span1);
+          pair.push(span2);
+        }
+
+        processedProjects.splice(processedProjects.indexOf(span2), 1);
+        processedProjects.splice(processedProjects.indexOf(span1), 1);
+      } else {
+        pair.push(processedProjects.splice(0,1)[0]);
+      }
+  
+      pairs.push(pair);
+      index++;
+    }
+  
+    return pairs.flat();
   };
 
   const filteredProjects =
     selectedCategory === "All"
       ? repositories
       : repositories.filter((repo) =>
-          repo.topics.includes(normalize(selectedCategory))
-        );
+        repo.topics && repo.topics.includes(normalize(selectedCategory))
+      );
 
-  const sortedProjects = filteredProjects.sort((a,b) => b.stargazers_count - a.stargazers_count);
-
-  const visibleProjects = sortedProjects.slice(0, visibleCount);
+  const sortedProjects = filteredProjects.sort((a, b) => b.stars - a.stars);
+  const arrangedProjects = arrangeProjects(sortedProjects);
+  const visibleProjects = arrangedProjects.slice(0, visibleCount);
 
   const handleShowMore = () => {
     if (visibleCount < 10) {
@@ -65,26 +108,20 @@ export default function Projects() {
       <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
         Projects
       </h2>
-      <Carousel items={cards} onCategorySelect={handleCategorySelect}/>
+      <Carousel items={cards} onCategorySelect={handleCategorySelect} />
       <div className="mt-10">
-        {visibleProjects.map((repo, index) => (
-          <div key={index} className="bg-[#F5F5F7] p-8 md:p-14 rounded-3xl mb-4">
-            <h3 className="text-neutral-800 text-xl md:text-2xl font-bold">
-              {repo.name}
-            </h3>
-            <p className="text-neutral-600 text-base md:text-xl">
-              {repo.description}
-            </p>
-            <a
-              href={repo.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline"
-            >
-              View Repository
-            </a>
-          </div>
-        ))}
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+          {visibleProjects.map((repos, i) => (
+            <BentoGridItem
+              key={i}
+              title={repos.name}
+              description={repos.description}
+              header={repos.header}
+              className={repos.className}
+              icon={repos.icon}
+            />
+          ))}
+        </BentoGrid>
         {visibleCount < filteredProjects.length && (
           <button
             onClick={handleShowMore}
@@ -92,8 +129,8 @@ export default function Projects() {
           >
             Show More
           </button>
-        )} 
-        { visibleCount > 3 && (
+        )}
+        {visibleCount > 3 && (
           <a href="#projects">
             <button
               onClick={handleHide}
@@ -143,13 +180,13 @@ const DummyContent = () => {
 };
 
 const categories = [
-  "App Development",
+  "All",
   "AI & ML",
-  "Software Engineering",
+  "App Development",
   "Embedded Systems",
+  "Software Engineering",
   "Web Development",
   "3D Models",
-  "All",
 ];
 
 const data = categories.map((category) => ({

@@ -1,4 +1,21 @@
-const repositories = [
+[
+  {
+    "name": "adjustable_led",
+    "description": "Adjust the brightness of an LED with a potentiometer",
+    "html_url": "https://github.com/ThisIsNotJustin/adjustable_led",
+    "stargazers_count": 1,
+    "topics": [
+      "c",
+      "embedded-systems"
+    ]
+  },
+  {
+    "name": "autodock",
+    "description": "",
+    "html_url": "https://github.com/ThisIsNotJustin/autodock",
+    "stargazers_count": 2,
+    "topics": []
+  },
   {
     "name": "balencigo",
     "description": "Lightweight and scalable loadbalancer written in Go with a focus on concurrency",
@@ -6,20 +23,29 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "go",
-      "software-engineering",
-      "web-development"
-    ],
+      "software-engineering"
+    ]
   },
   {
     "name": "basic_arm_os",
-    "description": "Files for projects in Operating System course",
+    "description": "Files for basic ARM based OS in Operating System course",
     "html_url": "https://github.com/ThisIsNotJustin/basic_arm_os",
     "stargazers_count": 2,
     "topics": [
       "arm64",
       "c",
       "embedded-systems"
-    ],
+    ]
+  },
+  {
+    "name": "bblink",
+    "description": "Control an LED utilizing a button",
+    "html_url": "https://github.com/ThisIsNotJustin/bblink",
+    "stargazers_count": 1,
+    "topics": [
+      "c",
+      "embedded-systems"
+    ]
   },
   {
     "name": "BestBuy-GPU-AutoBuyer",
@@ -29,17 +55,17 @@ const repositories = [
     "topics": [
       "python",
       "software-engineering"
-    ],
+    ]
   },
   {
     "name": "blinky",
-    "description": "",
+    "description": "Flash an led utilizing GPIO headers",
     "html_url": "https://github.com/ThisIsNotJustin/blinky",
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "topics": [
       "c",
       "embedded-systems"
-    ],
+    ]
   },
   {
     "name": "circular_buffer",
@@ -49,7 +75,7 @@ const repositories = [
     "topics": [
       "c",
       "embedded-systems"
-    ],
+    ]
   },
   {
     "name": "desk_setup",
@@ -58,7 +84,7 @@ const repositories = [
     "stargazers_count": 0,
     "topics": [
       "3d-models"
-    ],
+    ]
   },
   {
     "name": "DogBreed_Identifier",
@@ -66,9 +92,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/DogBreed_Identifier",
     "stargazers_count": 2,
     "topics": [
-      "python",
-      "ai-ml"
-    ],
+      "ai-ml",
+      "python"
+    ]
   },
   {
     "name": "gocator",
@@ -76,10 +102,10 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/gocator",
     "stargazers_count": 2,
     "topics": [
-      "go",
       "ai-ml",
+      "go",
       "software-engineering"
-    ],
+    ]
   },
   {
     "name": "golden_retriever_detector",
@@ -88,9 +114,10 @@ const repositories = [
     "stargazers_count": 1,
     "topics": [
       "python",
+      "selenium",
       "software-engineering",
-      "ai-ml"
-    ],
+      "twilio"
+    ]
   },
   {
     "name": "goshort",
@@ -99,8 +126,8 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "go",
-      "web-development"
-    ],
+      "software-engineering"
+    ]
   },
   {
     "name": "Hanoi-Tower-GameSimulation",
@@ -109,7 +136,7 @@ const repositories = [
     "stargazers_count": 0,
     "topics": [
       "java"
-    ],
+    ]
   },
   {
     "name": "https_server_c",
@@ -119,7 +146,7 @@ const repositories = [
     "topics": [
       "c",
       "software-engineering"
-    ],
+    ]
   },
   {
     "name": "iOSWeatherApp",
@@ -127,9 +154,9 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/iOSWeatherApp",
     "stargazers_count": 1,
     "topics": [
-      "swift",
-      "app-development"
-    ],
+      "app-development",
+      "swift"
+    ]
   },
   {
     "name": "linus_list",
@@ -139,7 +166,7 @@ const repositories = [
     "topics": [
       "c",
       "software-engineering"
-    ],
+    ]
   },
   {
     "name": "mac_tiles",
@@ -147,10 +174,10 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/mac_tiles",
     "stargazers_count": 2,
     "topics": [
+      "app-development",
       "swift",
-      "swiftui",
-      "app-development"
-    ],
+      "swiftui"
+    ]
   },
   {
     "name": "MaruIyagi-Website",
@@ -158,20 +185,21 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/MaruIyagi-Website",
     "stargazers_count": 2,
     "topics": [
-      "javascript",
+      "css",
+      "html",
       "reactjs",
       "web-development"
-    ],
+    ]
   },
   {
     "name": "MNIST_DigitRecognizer",
-    "description": "",
+    "description": "Simple MNIST digit recognizer utilizing Python and NumPy",
     "html_url": "https://github.com/ThisIsNotJustin/MNIST_DigitRecognizer",
     "stargazers_count": 1,
     "topics": [
-      "python",
-      "ai-ml"
-    ],
+      "ai-ml",
+      "python"
+    ]
   },
   {
     "name": "mobile_weather_app",
@@ -179,10 +207,10 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/mobile_weather_app",
     "stargazers_count": 3,
     "topics": [
+      "app-development",
       "react-native",
-      "typescript",
-      "app-development"
-    ],
+      "typescript"
+    ]
   },
   {
     "name": "nn_lib",
@@ -190,11 +218,11 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/nn_lib",
     "stargazers_count": 2,
     "topics": [
+      "ai-ml",
       "c",
       "neural-network",
-      "ai-ml",
       "software-engineering"
-    ],
+    ]
   },
   {
     "name": "old-portfolio",
@@ -202,11 +230,12 @@ const repositories = [
     "html_url": "https://github.com/ThisIsNotJustin/old-portfolio",
     "stargazers_count": 1,
     "topics": [
-      "javascript",
       "reactjs",
       "tailwindcss",
+      "typedjs",
+      "vite",
       "web-development"
-    ],
+    ]
   },
   {
     "name": "particlecim",
@@ -216,7 +245,16 @@ const repositories = [
     "topics": [
       "cpp",
       "software-engineering"
-    ],
+    ]
+  },
+  {
+    "name": "pi_thing",
+    "description": "",
+    "html_url": "https://github.com/ThisIsNotJustin/pi_thing",
+    "stargazers_count": 1,
+    "topics": [
+      "embedded-systems"
+    ]
   },
   {
     "name": "pongtex",
@@ -225,28 +263,36 @@ const repositories = [
     "stargazers_count": 2,
     "topics": [
       "c",
-      "software-engineering",
-      "embedded-systems"
-    ],
+      "embedded-systems",
+      "software-engineering"
+    ]
   },
   {
-    "name": "rand-display",
+    "name": "randomdigit",
+    "description": "Random number 1-6 on button press, 7 segment display dice!",
+    "html_url": "https://github.com/ThisIsNotJustin/randomdigit",
+    "stargazers_count": 2,
+    "topics": [
+      "c",
+      "embedded-systems"
+    ]
+  },
+  {
+    "name": "reflexpi",
     "description": "",
-    "html_url": "https://github.com/ThisIsNotJustin/rand-display",
+    "html_url": "https://github.com/ThisIsNotJustin/reflexpi",
     "stargazers_count": 0,
     "topics": [
       "c",
       "embedded-systems"
-    ],
+    ]
   },
   {
     "name": "snake-game",
     "description": "",
     "html_url": "https://github.com/ThisIsNotJustin/snake-game",
     "stargazers_count": 0,
-    "topics": [
-      "java"
-    ],
+    "topics": []
   },
   {
     "name": "StudyTimerGUI",
@@ -256,30 +302,6 @@ const repositories = [
     "topics": [
       "java",
       "javaswing"
-    ],
-  },
-  {
-    "name": "ThisIsNotJustin.github.io",
-    "description": "",
-    "html_url": "https://github.com/ThisIsNotJustin/ThisIsNotJustin.github.io",
-    "stargazers_count": 2,
-    "topics": [
-      "typescript",
-      "go",
-      "tailwindcss",
-      "nextjs",
-      "web-development"
-    ],
-  },
-  {
-    "name": "Velocity_BasicGPS_Computation",
-    "description": "Basic program for calculating the velocity of a specific aircraft and determining which satellite is furthest from a user for a rudimentary gps system",
-    "html_url": "https://github.com/ThisIsNotJustin/Velocity_BasicGPS_Computation",
-    "stargazers_count": 0,
-    "topics": [
-      "cpp"
-    ],
+    ]
   }
-];
-
-export default repositories;
+]
