@@ -91,7 +91,7 @@ const repositories = [
     name: "blinky",
     description: "Flash an led utilizing GPIO headers",
     url: "https://github.com/ThisIsNotJustin/blinky",
-    stars: 1,
+    stars: 0,
     topics: [
       "c",
       "embedded-systems"
@@ -289,7 +289,7 @@ const repositories = [
   },
   {
     name: "ThisIsNotJustin.github.io",
-    description: "This Portfolio Site",
+    description: "This Portfolio Site!",
     url: "https://github.com/ThisIsNotJustin/ThisIsNotJustin.github.io",
     stars: 2,
     topics: [
@@ -388,9 +388,9 @@ const repositories = [
   },
   {
     name: "reflexpi",
-    description: "",
+    description: "Reaction time tester with a 7 segment display, LED, and button!",
     url: "https://github.com/ThisIsNotJustin/reflexpi",
-    stars: 0,
+    stars: 2,
     topics: [
       "c",
       "embedded-systems"

@@ -11,10 +11,13 @@
   },
   {
     "name": "autodock",
-    "description": "",
+    "description": "Go based CLI for automating docker redeployments",
     "html_url": "https://github.com/ThisIsNotJustin/autodock",
     "stargazers_count": 2,
-    "topics": []
+    "topics": [
+      "go",
+      "software-engineering"
+    ]
   },
   {
     "name": "balencigo",
@@ -41,7 +44,7 @@
     "name": "bblink",
     "description": "Control an LED utilizing a button",
     "html_url": "https://github.com/ThisIsNotJustin/bblink",
-    "stargazers_count": 1,
+    "stargazers_count": 0,
     "topics": [
       "c",
       "embedded-systems"
@@ -271,7 +274,7 @@
     "name": "randomdigit",
     "description": "Random number 1-6 on button press, 7 segment display dice!",
     "html_url": "https://github.com/ThisIsNotJustin/randomdigit",
-    "stargazers_count": 2,
+    "stargazers_count": 1,
     "topics": [
       "c",
       "embedded-systems"
@@ -279,9 +282,9 @@
   },
   {
     "name": "reflexpi",
-    "description": "",
+    "description": "Reaction time tester with a 7 segment display, LED, and button!",
     "html_url": "https://github.com/ThisIsNotJustin/reflexpi",
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "topics": [
       "c",
       "embedded-systems"

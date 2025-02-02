@@ -6,13 +6,16 @@ import { Carousel, Label, CarouselContext } from "./ui/apple-cards-carousel";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import repositories from "../lib/repositories";
 import { IoArrowUp } from "react-icons/io5";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { cn } from "../lib/utils";
 
 export default function Projects() {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(4);
   const projectsRef = useRef<HTMLDivElement>(null);
   const { currentIndex, setCurrentIndex } = useContext(CarouselContext);
   const [selectedCategory, setSelectedCategory] = useState(categories[currentIndex]);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setSelectedCategory(categories[currentIndex]);
@@ -112,7 +115,7 @@ export default function Projects() {
   };
 
   const handleHide = () => {
-    setVisibleCount(3);
+    setVisibleCount(4);
   };
 
   const targetRef = useRef(null);
@@ -135,11 +138,13 @@ export default function Projects() {
             {visibleProjects.map((repos, i) => (
               <BentoGridItem
                 key={i}
+                link={repos.url}
                 title={repos.name}
                 description={repos.description}
                 header={repos.header}
                 className={repos.className}
                 icon={repos.icon}
+                idx={i}
               />
             ))}
           </BentoGrid>
@@ -151,7 +156,7 @@ export default function Projects() {
               Show More
             </button>
           )}
-          {visibleCount > 3 && (
+          {visibleCount > 4 && (
             <a href="#projects">
               <button
                 onClick={handleHide}
