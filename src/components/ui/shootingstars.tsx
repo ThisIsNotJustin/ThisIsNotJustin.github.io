@@ -74,7 +74,7 @@ const ShootingStars: React.FC<ShootingStarsProps> = ({
         speed: Math.random() * (maxSpeed - minSpeed) + minSpeed,
         distance: 0,
         color: getRandomColor(),
-        gradientId: `gradient-${Date.now()}`,
+        gradient: `gradient-${Date.now()}`,
       };
       setStar(newStar);
 
@@ -136,14 +136,14 @@ const ShootingStars: React.FC<ShootingStarsProps> = ({
             y={star.y}
             width={starWidth * star.scale}
             height={starHeight}
-            fill={`url(#${star.gradientId})`}
+            fill={`url(#${star.gradient})`}
             transform={`rotate(${star.angle}, ${
               star.x + (starWidth * star.scale) / 2
             }, ${star.y + starHeight / 2})`}
           />
           <defs>
             <linearGradient
-              id={star.gradientId}
+              id={star.gradient}
               x1="0%"
               y1="0%"
               x2="100%"
