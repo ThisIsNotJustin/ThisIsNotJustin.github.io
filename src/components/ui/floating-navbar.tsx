@@ -63,7 +63,7 @@ export const FloatingNav = ({
             <nav className="flex items-center space-x-7 font-grotesk text-works-title font-black sm:block">
               <a href="#intro" className="z-50">
                 <span className="text-works-title text-secondary-200">
-                  {"<Justin>"}
+                  {"<Justin />"}
                 </span>
                 <span className="absolute bottom-0 left-0 h-[0.125em] w-0 rounded-full bg-secondary-600 duration-300 ease-in-out group-hover:w-full"></span>
               </a>

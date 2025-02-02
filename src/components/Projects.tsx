@@ -6,6 +6,7 @@ import { Carousel, Label, CarouselContext } from "./ui/apple-cards-carousel";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import repositories from "../lib/repositories";
 import { IoArrowUp } from "react-icons/io5";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(3);
@@ -114,44 +115,54 @@ export default function Projects() {
     setVisibleCount(3);
   };
 
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["end end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, .9], [1, 0]);
+
   return (
     <div ref={projectsRef} id="projects" className="mx-auto items-center justify-center flex flex-col w-full h-full py-20 pb-80">
       <h2 className="text-5xl sm:text-heading-2 font-semibold uppercase text-secondary-700">
         Projects
       </h2>
       <Carousel items={cards} onCategorySelect={handleCategorySelect} />
-      <div className="mt-10">
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-          {visibleProjects.map((repos, i) => (
-            <BentoGridItem
-              key={i}
-              title={repos.name}
-              description={repos.description}
-              header={repos.header}
-              className={repos.className}
-              icon={repos.icon}
-            />
-          ))}
-        </BentoGrid>
-        {visibleCount < filteredProjects.length && (
-          <button
-            onClick={handleShowMore}
-            className="mt-4 px-6 py-2 text-white"
-          >
-            Show More
-          </button>
-        )}
-        {visibleCount > 3 && (
-          <a href="#projects">
+      <motion.div style={{ opacity }}>
+        <div ref={targetRef} className="mt-10">
+          <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+            {visibleProjects.map((repos, i) => (
+              <BentoGridItem
+                key={i}
+                title={repos.name}
+                description={repos.description}
+                header={repos.header}
+                className={repos.className}
+                icon={repos.icon}
+              />
+            ))}
+          </BentoGrid>
+          {visibleCount < filteredProjects.length && (
             <button
-              onClick={handleHide}
-              className="mt-4 px-6 py-2 text-white transition-all scroll-smooth duration-500"
+              onClick={handleShowMore}
+              className="mt-4 px-6 py-2 text-white"
             >
-              Hide
+              Show More
             </button>
-          </a>
-        )}
-      </div>
+          )}
+          {visibleCount > 3 && (
+            <a href="#projects">
+              <button
+                onClick={handleHide}
+                className="mt-4 px-6 py-2 text-white transition-all scroll-smooth duration-500"
+              >
+                Hide
+              </button>
+            </a>
+          )}
+        </div>
+      </motion.div>
     </div>
   );
 }
