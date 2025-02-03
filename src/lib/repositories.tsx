@@ -2,6 +2,8 @@ import { cn } from "../lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 import { IoArrowUp } from "react-icons/io5";
+import Image from "next/image";
+import { ProjectImage } from "../components/ui/project-image";
 
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
@@ -28,6 +30,7 @@ const repositories = [
     stars: 2,
     topics: [
       "go",
+      "docker",
       "software-engineering"
     ],
     header: <Skeleton />,
@@ -132,7 +135,8 @@ const repositories = [
     stars: 2,
     topics: [
       "ai-ml",
-      "python"
+      "python",
+      "tensorflow",
     ],
     header: <Skeleton />,
     className: "md:col-span-2",
@@ -174,6 +178,8 @@ const repositories = [
     stars: 2,
     topics: [
       "go",
+      "docker",
+      "redis",
       "software-engineering"
     ],
     header: <Skeleton />,
@@ -251,9 +257,9 @@ const repositories = [
     url: "https://github.com/ThisIsNotJustin/MaruIyagi-Website",
     stars: 2,
     topics: [
-      "css",
-      "html",
-      "reactjs",
+      "tailwindcss",
+      "react",
+      "javascript",
       "web-development"
     ],
     header: <Skeleton />,
@@ -283,7 +289,12 @@ const repositories = [
       "react-native",
       "typescript"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/retroweather.png"
+        alt="Simple Weather App"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -324,9 +335,9 @@ const repositories = [
     url: "https://github.com/ThisIsNotJustin/old-portfolio",
     stars: 1,
     topics: [
-      "reactjs",
+      "react",
       "tailwindcss",
-      "typedjs",
+      "javascript",
       "vite",
       "web-development"
     ],
@@ -404,7 +415,9 @@ const repositories = [
     description: "",
     url: "https://github.com/ThisIsNotJustin/snake-game",
     stars: 0,
-    topics: [],
+    topics: [
+      "java",
+    ],
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,

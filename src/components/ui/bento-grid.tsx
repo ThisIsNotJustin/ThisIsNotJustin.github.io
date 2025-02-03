@@ -3,7 +3,20 @@
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import Image from "next/image";
+
+type BentoGridContextType = {
+  hoveredIndex: number | null;
+  setHoveredIndex: (index: number | null) => void;
+};
+
+const BentoGridContext = createContext<BentoGridContextType>({
+  hoveredIndex: null,
+  setHoveredIndex: () => { },
+});
+
+const useBentoGrid = () => useContext(BentoGridContext);
 
 export const BentoGrid = ({
   className,
@@ -15,35 +28,40 @@ export const BentoGrid = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      className={cn(
+    <BentoGridContext.Provider value={{ hoveredIndex, setHoveredIndex }}>
+      <div className={cn(
         "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
         className
-      )}
-    >
-      {React.Children.map(children, (child, idx) => {
-        if (React.isValidElement(child)) {
-          const typeChild = child as React.ReactElement<{
-            className?: string;
-            idx?: number;
-            onMouseEnter?: () => void;
-            onMouseLeave?: () => void;
-            isHovered?: boolean;
-          }>;
-
-          const originalClass = typeChild.props.className || '';
-          return React.cloneElement(typeChild, {
-            idx,
-            onMouseEnter: () => setHoveredIndex(idx),
-            onMouseLeave: () => setHoveredIndex(null),
-            isHovered: hoveredIndex === idx,
-            className: originalClass,
-          });
-        }
-        return child;
-      })}
-    </div>
+      )}>
+        {children}
+      </div>
+    </BentoGridContext.Provider>
   );
+};
+
+interface BentoGridItemProps {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+  link?: string;
+  idx: number;
+  topics?: string[];
+}
+
+const getLanguageIcon = (language: string) => {
+  const special: { [key: string]: string } = {
+    "cpp": "cplusplus/cplusplus-original",
+    "go": "go/go-original-wordmark",
+    "react-native": "react/react-original",
+    "react": "react/react-original",
+    "vite": "vitejs/vitejs-original",
+  };
+
+  const path = special[language] || `${language}/${language}-original`;
+
+  return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}.svg`;
 };
 
 export const BentoGridItem = ({
@@ -54,50 +72,66 @@ export const BentoGridItem = ({
   icon,
   link,
   idx,
-  isHovered,
-  onMouseEnter,
-  onMouseLeave,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-  link?: string;
-  idx?: number;
-  isHovered?: boolean;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-}) => {
-  const ItemContent = () => (
-    <div
-      className={cn(
+  topics,
+}: BentoGridItemProps) => {
+  const { hoveredIndex, setHoveredIndex } = useBentoGrid();
+  const isHovered = hoveredIndex === idx;
+
+  const languages = [
+    "c", "python", "typescript", "javascript",
+    "go", "rust", "csharp", "react", "swift",
+    "cpp", "react-native", "java", "vite",
+    "tailwindcss", "tensorflow", "docker",
+    "redis"
+  ];
+
+  const ItemContent = React.memo(function ItemContent() {
+    return (
+      <div className={cn(
         `row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200
-        shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] 
-        bg-white border border-transparent justify-between flex flex-col space-y-4 relative z-20 h-full`,
+        shadow-input shadow-none p-3 bg-accent-400 border-white/[0.2] 
+        border justify-between flex flex-col space-y-4 relative z-20 h-full`,
         className
-      )}
-    >
-      {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
-          {title}
-        </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-          {description}
+      )}>
+        {header}
+        <div className="group-hover/bento:translate-x-2 transition duration-200">
+          <div className="text-works-title-large font-bold text-primary-200 mt-2">
+            {title}
+          </div>
+          <div className="grid grid-cols-[1fr_auto] items-center gap-2">
+            <div className="font-normal text-sm text-primary-400 line-clamp-2 pt-0.5">
+              {description}
+            </div>
+            <div className="flex -space-x-2 flex-nowrap justify-end">
+              {topics
+                ?.filter(topic => languages.includes(topic))
+                ?.map((language, index) => (
+                  <img
+                    key={`${language}-${index}`}
+                    src={getLanguageIcon(language)}
+                    alt={`${language} logo`}
+                    className={cn(
+                      "p-1.5 h-8 w-8 md:h-10 md:w-10 rounded-3xl border-white/[0.2] border",
+                      "bg-accent-400 flex items-center justify-center",
+                      "hover:scale-125 transition-all duration-200 hover:z-10"
+                    )}
+                    style={{ zIndex: topics.length - index }}
+                  />
+                ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  });
 
   return (
     <div
       className={cn("relative group block p-2",
         className
       )}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onMouseEnter={() => setHoveredIndex(idx)}
+      onMouseLeave={() => setHoveredIndex(null)}
     >
       <AnimatePresence>
         {isHovered && (

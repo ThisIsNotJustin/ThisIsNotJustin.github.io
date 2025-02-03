@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import { Carousel, Label, CarouselContext } from "./ui/apple-cards-carousel";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import repositories from "../lib/repositories";
+import Repository from "../lib/repositories";
 import { IoArrowUp } from "react-icons/io5";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -144,6 +145,7 @@ export default function Projects() {
                 header={repos.header}
                 className={repos.className}
                 icon={repos.icon}
+                topics={repos.topics}
                 idx={i}
               />
             ))}
@@ -217,6 +219,6 @@ const categories = [
 ];
 
 const data = categories.map((category) => ({
-  category,
   content: <DummyContent />,
+  category
 }));
