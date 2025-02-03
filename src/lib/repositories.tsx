@@ -19,7 +19,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Potentiometer Controlled LED"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -33,7 +38,12 @@ const repositories = [
       "docker",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="Docker Autoredeploy CLI Tool"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -46,7 +56,12 @@ const repositories = [
       "go",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="Loadbalancer in Go"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -60,7 +75,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="ARM based Operating System"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -73,7 +93,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Button Activated LED"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -86,7 +111,12 @@ const repositories = [
       "python",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="BestBuy GPU Buyer"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -99,7 +129,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Basic LED Blink Program"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -112,19 +147,29 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Ring Buffer for RTOS"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
     name: "desk_setup",
-    description: "",
+    description: "3d models for my desk and wall",
     url: "https://github.com/ThisIsNotJustin/desk_setup",
     stars: 0,
     topics: [
       "3d-models"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/deskdemo.png"
+        alt="Desk & Wall Setup"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -138,7 +183,12 @@ const repositories = [
       "python",
       "tensorflow",
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/dogbreed.png"
+        alt="Dog Breed Identifier"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -152,7 +202,12 @@ const repositories = [
       "go",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/duckduckgo.png"
+        alt="Go based Local Search Engine"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -167,7 +222,12 @@ const repositories = [
       "software-engineering",
       "twilio"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="Puppy Detector"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -182,12 +242,17 @@ const repositories = [
       "redis",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="URL Shortener"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "Hanoi-Tower-GameSimulation",
+    name: "Hanoi-Tower-Simulation",
     description: "Program to display steps for solving the hanoi tower game (stacked disc game)",
     url: "https://github.com/ThisIsNotJustin/Hanoi-Tower-GameSimulation",
     stars: 0,
@@ -207,7 +272,12 @@ const repositories = [
       "c",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="HTTP Library in C"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -233,7 +303,12 @@ const repositories = [
       "c",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="Linked List with Good Taste"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -267,7 +342,7 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "MNIST_DigitRecognizer",
+    name: "DigitRecognizer",
     description: "Simple MNIST digit recognizer utilizing Python and NumPy",
     url: "https://github.com/ThisIsNotJustin/MNIST_DigitRecognizer",
     stars: 1,
@@ -316,7 +391,7 @@ const repositories = [
   },
   {
     name: "nn_lib",
-    description: "Neural Network library written in C for NN Educational Purposes",
+    description: "Neural Network library written in C for Educational Purposes",
     url: "https://github.com/ThisIsNotJustin/nn_lib",
     stars: 2,
     topics: [
@@ -325,7 +400,12 @@ const repositories = [
       "neural-network",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/nnlib.png"
+        alt="NN Library"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -354,19 +434,29 @@ const repositories = [
       "cpp",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/cpp.png"
+        alt="Particle Simulator in C++"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
     name: "pi_thing",
-    description: "",
+    description: "Raspberry Pi Recreation of Spotify Car Thing",
     url: "https://github.com/ThisIsNotJustin/pi_thing",
     stars: 1,
     topics: [
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Raspberry Pi version of Spotify Car Thing"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -380,7 +470,12 @@ const repositories = [
       "embedded-systems",
       "software-engineering"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Ping Pong Terminal based mutex"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -393,7 +488,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Random Digit on 7 Segment Display"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -406,7 +506,12 @@ const repositories = [
       "c",
       "embedded-systems"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/embedded.png"
+        alt="Reaction Time Tester"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },

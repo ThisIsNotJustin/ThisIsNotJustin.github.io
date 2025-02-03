@@ -148,7 +148,7 @@ export const MobileSidebar = ({
               )}
             >
               <div
-                className="absolute right-10 top-10 text-center mx-auto justify-center z-50 text-neutral-200"
+                className="absolute right-10 top-10 text-center bg-secondary-500 mx-auto justify-center z-50 text-neutral-200"
                 onClick={toggleMenu}
               >
               </div>
