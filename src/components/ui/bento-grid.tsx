@@ -146,7 +146,7 @@ export const BentoGridItem = ({
       </AnimatePresence>
 
       {link ? (
-        <Link href={link} className="h-full w-full block">
+        <Link href={link} target="_blank" className="h-full w-full block">
           <ItemContent />
         </Link>
       ) : (
