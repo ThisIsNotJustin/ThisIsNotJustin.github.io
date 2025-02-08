@@ -113,7 +113,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/cpp.png"
+        src="/assets/bestbuy3090.jpg"
         alt="BestBuy GPU Buyer"
       />
     ),
@@ -149,7 +149,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/embedded.png"
+        src="/assets/circularbuffer.png"
         alt="Ring Buffer for RTOS"
       />
     ),
@@ -290,7 +290,12 @@ const repositories = [
       "app-development",
       "swift"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/weather.jpg"
+        alt="iOS Weather App"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -327,7 +332,7 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "MaruIyagi-Website",
+    name: "Maru Iyagi Restaurant",
     description: "Website for local sushi restaurant",
     url: "https://github.com/ThisIsNotJustin/MaruIyagi-Website",
     stars: 2,
@@ -337,7 +342,12 @@ const repositories = [
       "javascript",
       "web-development"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/maruwebsite.png"
+        alt="Sushi Restaurant Website"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -385,7 +395,12 @@ const repositories = [
       "nextjs",
       "tailwindcss",
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/portfolio.png"
+        alt="Justin's Portfolio"
+      />
+    ),
     className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -436,7 +451,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/cpp.png"
+        src="/assets/particledemo.png"
         alt="Particle Simulator in C++"
       />
     ),

@@ -39,7 +39,7 @@ export default function Skills() {
           {/* Tools */}
           <div className="flex flex-col md:flex-row items-start gap-16 md:gap-24 p-1">
             <div className="md:w-1/3">
-              <h3 className="text-heading-3 font-bold text-secondary-700 mb-6 md:mb-12">
+              <h3 className="text-heading-3 font-bold text-secondary-700 mb-6 md:mb-8">
                 Tools
               </h3>
               <p className="text-body-1 text-primary-400">
