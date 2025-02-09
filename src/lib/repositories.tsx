@@ -166,7 +166,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/deskdemo.png"
+        src="/assets/desk_all_front.png"
         alt="Desk & Wall Setup"
       />
     ),
