@@ -40,7 +40,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/cpp.png"
+        src="/assets/docker_reload.png"
         alt="Docker Autoredeploy CLI Tool"
       />
     ),
@@ -49,7 +49,7 @@ const repositories = [
   },
   {
     name: "balencigo",
-    description: "Lightweight and scalable loadbalancer written in Go with a focus on concurrency",
+    description: "Lightweight and scalable loadbalancer library written in Go with a focus on concurrency",
     url: "https://github.com/ThisIsNotJustin/balencigo",
     stars: 2,
     topics: [
@@ -58,7 +58,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/cpp.png"
+        src="/assets/lbalancego.png"
         alt="Loadbalancer in Go"
       />
     ),
@@ -69,7 +69,7 @@ const repositories = [
     name: "basic_arm_os",
     description: "Files for basic ARM based OS in Operating System course",
     url: "https://github.com/ThisIsNotJustin/basic_arm_os",
-    stars: 2,
+    stars: 1,
     topics: [
       "arm64",
       "c",
@@ -77,7 +77,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/embedded.png"
+        src="/assets/armdows.png"
         alt="ARM based Operating System"
       />
     ),
@@ -174,7 +174,7 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "DogBreed_Identifier",
+    name: "Dog Breed Classifier",
     description: "Dog Breed Identifier project created in Python utilizing CNN's",
     url: "https://github.com/ThisIsNotJustin/DogBreed_Identifier",
     stars: 2,
@@ -189,7 +189,7 @@ const repositories = [
         alt="Dog Breed Identifier"
       />
     ),
-    className: "md:col-span-2",
+    className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -212,7 +212,7 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "golden_retriever_detector",
+    name: "Puppy Detector",
     description: "Facebook Webscraper to receive texts when golden retriever puppies are announced",
     url: "https://github.com/ThisIsNotJustin/golden_retriever_detector",
     stars: 1,
@@ -252,14 +252,19 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "Hanoi-Tower-Simulation",
+    name: "Hanoi Tower Solver",
     description: "Program to display steps for solving the hanoi tower game (stacked disc game)",
     url: "https://github.com/ThisIsNotJustin/Hanoi-Tower-GameSimulation",
     stars: 0,
     topics: [
       "java"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/HanoiSolver.png"
+        alt="Hanoi Tower Solver"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -353,14 +358,19 @@ const repositories = [
   },
   {
     name: "DigitRecognizer",
-    description: "Simple MNIST digit recognizer utilizing Python and NumPy",
+    description: "MNIST digit classifier utilizing only Python and NumPy",
     url: "https://github.com/ThisIsNotJustin/MNIST_DigitRecognizer",
     stars: 1,
     topics: [
       "ai-ml",
       "python"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/mnist.png"
+        alt="MNIST Digit Classifier"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
@@ -405,10 +415,10 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "nn_lib",
-    description: "Neural Network library written in C for Educational Purposes",
+    name: "Neural Network Library",
+    description: "Neural Network library for Feed-Forward, Transformer, and Convolutional Neural Networks, written in C",
     url: "https://github.com/ThisIsNotJustin/nn_lib",
-    stars: 2,
+    stars: 3,
     topics: [
       "ai-ml",
       "c",
@@ -421,7 +431,7 @@ const repositories = [
         alt="NN Library"
       />
     ),
-    className: "md:col-span-1",
+    className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -459,17 +469,18 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "pi_thing",
-    description: "Raspberry Pi Recreation of Spotify Car Thing",
+    name: "Spotify Pi Thing",
+    description: "Complete recreation of the Spotify Car Thing using a Pi",
     url: "https://github.com/ThisIsNotJustin/pi_thing",
-    stars: 1,
+    stars: 2,
     topics: [
-      "embedded-systems"
+      "embedded-systems",
+      "c"
     ],
     header: (
       <ProjectImage 
         src="/assets/embedded.png"
-        alt="Raspberry Pi version of Spotify Car Thing"
+        alt="Replication of the Spotify Car Thing"
       />
     ),
     className: "md:col-span-2",
@@ -498,7 +509,7 @@ const repositories = [
     name: "randomdigit",
     description: "Random number 1-6 on button press, 7 segment display dice!",
     url: "https://github.com/ThisIsNotJustin/randomdigit",
-    stars: 2,
+    stars: 1,
     topics: [
       "c",
       "embedded-systems"
@@ -523,11 +534,11 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/embedded.png"
+        src="/assets/rttest.png"
         alt="Reaction Time Tester"
       />
     ),
-    className: "md:col-span-1",
+    className: "md:col-span-2",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -543,15 +554,20 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    name: "StudyTimerGUI",
-    description: "Study Timer defaulted at 90 minutes for a long study session. On 5 minute intervals, the user is told to take a 10 second break.",
+    name: "Study Timer",
+    description: "Study Timer with 5 minute intervals, for 10 second breaks",
     url: "https://github.com/ThisIsNotJustin/StudyTimerGUI",
     stars: 0,
     topics: [
       "java",
       "javaswing"
     ],
-    header: <Skeleton />,
+    header: (
+      <ProjectImage 
+        src="/assets/StudyTimer.png"
+        alt="Study Timer"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   }
