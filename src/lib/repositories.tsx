@@ -297,7 +297,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/weather.jpg"
+        src="/assets/weather.png"
         alt="iOS Weather App"
       />
     ),
@@ -315,7 +315,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/cpp.png"
+        src="/assets/linus_list.png"
         alt="Linked List with Good Taste"
       />
     ),
