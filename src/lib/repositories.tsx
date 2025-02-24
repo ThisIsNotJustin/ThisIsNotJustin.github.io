@@ -479,7 +479,7 @@ const repositories = [
     ],
     header: (
       <ProjectImage 
-        src="/assets/embedded.png"
+        src="/assets/pi_thing.png"
         alt="Replication of the Spotify Car Thing"
       />
     ),
