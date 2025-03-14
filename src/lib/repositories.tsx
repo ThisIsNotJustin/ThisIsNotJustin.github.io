@@ -487,6 +487,23 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
+    name: "Spotify Pi Thing",
+    description: "3D Model of the Pi Thing",
+    url: "https://github.com/ThisIsNotJustin/pi_thing",
+    stars: 2,
+    topics: [
+      "3d-models"
+    ],
+    header: (
+      <ProjectImage 
+        src="/assets/screen.png"
+        alt="Replication of the Spotify Car Thing"
+      />
+    ),
+    className: "md:col-span-1",
+    icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
+  },
+  {
     name: "pongtex",
     description: "Ping Pong Game utilizing a mutex for mutual exclusion and synchronization",
     url: "https://github.com/ThisIsNotJustin/pongtex",
