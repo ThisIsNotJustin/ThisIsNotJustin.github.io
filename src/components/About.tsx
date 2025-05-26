@@ -24,13 +24,13 @@ export default function About() {
               <div className="mx-auto sm:sticky md:top-28 lg:top-32 md:w-1/2">
                 <div className="space-y-4 2xl:space-y-10">
                   <p className="text-accent-400 text-body-1 font-medium 2xl:text-4xl text-center">
-                    I am a Computer Science student at Tennessee Technological University with a passion for development and design.
+                    I am a Computer Science graduate from Tennessee Technological University with a passion for full-stack development and design.
                     <br></br>
                     <br></br>
-                    I am deeply interested in a wide array of Computer Science topics including Embedded Systems, Machine Learning, IoT, Software Development, and Web Development.
+                    I am deeply interested in a wide array of Computer Science topics including Embedded Systems, Machine Learning, Software Development, and Web Development.
                     <br></br>
                     <br></br>
-                    Outside of developing and school, I enjoy powerlifting and playing with my dog!
+                    Outside of developing, I enjoy hobbies such as powerlifting, rock climbing, and playing with my dog!
                   </p>
                 </div>
               </div>

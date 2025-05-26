@@ -337,6 +337,26 @@ const repositories = [
     icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
   },
   {
+    name: "Codera Design",
+    description: "Website for web development agency",
+    url: "",
+    stars: 2,
+    topics: [
+      "tailwindcss",
+      "react",
+      "javascript",
+      "web-development"
+    ],
+    header: (
+      <ProjectImage 
+        src="/assets/codera.png"
+        alt="Codera Design Website"
+      />
+    ),
+    className: "md:col-span-2",
+    icon: <IoArrowUp className="h-4 w-4 text-neutral-500" />,
+  },
+  {
     name: "Maru Iyagi Restaurant",
     description: "Website for local sushi restaurant",
     url: "https://github.com/ThisIsNotJustin/MaruIyagi-Website",

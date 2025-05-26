@@ -22,15 +22,13 @@ export default function Skills() {
               </p>
             </div>
             <ul className="text-secondary-500 md:w-2/3 grid grid-cols-2 font-bold gap-4 gap-x-16 text-heading-3 mt-0 pt-0 lg:pt-20">
-              <li>C</li>
+              <li>C/C++</li>
               <li>Go</li>
               <li>TypeScript</li>
               <li>Python</li>
               <li>Swift</li>
-              <li>C++</li>
               <li>JavaScript</li>
               <li>C#</li>
-              <li>Rust</li>
               <li>Assembly</li>
             </ul>
           </div>
@@ -79,9 +77,7 @@ export default function Skills() {
               <li>Tensorflow</li>
               <li>React</li>
               <li>PyTorch</li>
-              <li>Qiskit</li>
               <li>SwiftUI</li>
-              <li>Zephyr</li>
               <li>FreeRTOS</li>
               <li>Unity</li>
             </ul>
