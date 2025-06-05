@@ -339,7 +339,7 @@ const repositories = [
   {
     name: "Codera Design",
     description: "Website for web development agency",
-    url: "",
+    url: "https://coderadesign.vercel.app",
     stars: 2,
     topics: [
       "tailwindcss",
